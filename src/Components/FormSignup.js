@@ -5,17 +5,14 @@ const FormSignup = () => {
     const{handleChange, values, handleSubmit } = useForm();
     return (
         <div className="form-content-right">
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit} noValidate>
                 <h1>Let's get started with it.
                 </h1>
 
 
 
                 <div className='form-inputs'>
-                    <label htmlFor='Username'
-                    className='form-label'>
-                        Username
-                    </label>
+                    <label className='form-label'> Username </label>
 
 
                     {/* Username */}
@@ -30,6 +27,7 @@ const FormSignup = () => {
                     value={values.username}
                     onChange={handleChange}
                     />
+                    {errors.username && <p>{errors.username}</p>}
                     </div>
 
                     <div className='form-inputs'>
@@ -50,6 +48,7 @@ const FormSignup = () => {
                     value={values.email}
                     onChange={handleChange}
                     />
+                {errors.email && <p>{errors.email}</p>}
                     </div>
 
                     <div className='form-inputs'>
@@ -70,6 +69,7 @@ const FormSignup = () => {
                     value={values.Password}
                     onChange={handleChange}
                     />
+        {errors.Password && <p>{errors.Password}</p>}
                     </div>
 
                     <div className='form-inputs'>
@@ -90,6 +90,7 @@ const FormSignup = () => {
                     value={values.Password2}
                     onChange={handleChange}
                     />
+        {errors.ConfirmPassword && <p>{errors.ConfirmPassword}</p>}
                     </div>
 
                    {/* Address  */}
@@ -110,6 +111,7 @@ const FormSignup = () => {
                     value={values.Address}
                     onChange={handleChange}
                     />
+        {errors.Address && <p>{errors.Address}</p>}
                     </div>
                     <button className="form-input-btn" 
                     type="Submit">
